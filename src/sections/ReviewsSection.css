@@ -1,0 +1,109 @@
+/* Base section */
+.reviews-section {
+  position: relative;
+  padding: 1px 1px;
+  background: #000000;
+  text-align: center;
+  overflow: hidden;
+}
+
+/* No gradients */
+.reviews-section::before,
+.reviews-section::after {
+  display: none;
+}
+
+/* Headings */
+.section-heading {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+  color: #ffffff;
+}
+
+.section-subheadline {
+  font-size: 1.2rem;
+  color: #bbbbbb;
+  margin-bottom: 50px;
+}
+
+/* Desktop grid (equal height) */
+.reviews-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+  grid-auto-rows: 1fr; /* equal height rows */
+}
+
+/* Mobile: scrolling container */
+.mobile-scroll-container {
+  overflow: hidden;
+  width: 100%;
+  margin: 30px 0;
+}
+
+/* Mobile scroll line animation */
+.mobile-scroll-line {
+  display: flex;
+  gap: 15px;
+  white-space: nowrap;
+  animation-duration: 10s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+
+  align-items: stretch; /* forces equal height alignment */
+}
+
+/* Scroll directions */
+.line1 {
+  animation-name: scrollBackForth1;
+}
+.line2 {
+  animation-name: scrollBackForth2;
+}
+
+@keyframes scrollBackForth1 {
+  0% { transform: translateX(0%); }
+  50% { transform: translateX(-50%); }
+  100% { transform: translateX(0%); }
+}
+
+@keyframes scrollBackForth2 {
+  0% { transform: translateX(-50%); }
+  50% { transform: translateX(0%); }
+  100% { transform: translateX(-50%); }
+}
+
+/* Width and height of each card in mobile */
+.mobile-scroll-line > * {
+  flex: 0 0 220px;
+  height: 320px; /* fixed height for mobile cards */
+}
+
+/* Make review card fill the height */
+.mobile-scroll-line .review-card {
+  height: 100%;
+}
+
+/* Responsive tweaks */
+@media (max-width: 768px) {
+  .section-heading {
+    font-size: 2rem;
+  }
+
+  .section-subheadline {
+    font-size: 1rem;
+  }
+
+  .review-card {
+    margin-bottom: 20px;
+    margin-top: 10px;
+  }
+
+  .reviews-section {
+    padding: 0;
+    margin: 0;
+  }
+}

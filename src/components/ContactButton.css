@@ -1,0 +1,158 @@
+/* Wrapper */
+.ai-mode-component {
+  --btn-bg: #000000;         /* black button background */
+  --btn-text: #ffffff;       /* white text */
+  --btn-border: #ffffff;     /* border glow */
+  --gradient-green: #CCAAFC; 
+  --gradient-yellow: #6942FD; 
+  --gradient-red: #6942FD; 
+  --gradient-blue: #CCAAFC;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: transparent;   /* navbar friendly */
+  padding: 0;
+  border-radius: 1em;
+}
+
+/* Button */
+.ai-mode-button {
+  background: var(--btn-bg);
+  border: none;
+  border-radius: 5em;
+  cursor: pointer;
+
+  font-size: 1em;
+  font-weight: 400;
+  line-height: 1.25em;
+
+  height: 2.25em;
+  padding: 0.5em 1.5em 0.5em 1.5em;
+
+  position: relative;
+  color: var(--btn-text);
+  overflow: visible;
+
+  transition: transform 0.15s ease;
+}
+
+.ai-mode-button:active {
+  transform: scale(0.97);
+}
+
+.ai-mode-button:focus-visible {
+  outline: 0.15em solid var(--gradient-blue);
+  outline-offset: 0.3em;
+}
+
+/* Outer border/glow */
+.ai-mode-button::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  border: 0.07em solid var(--btn-border);
+  background: rgba(255, 255, 255, 0.08);
+  opacity: 0.4;
+  transition: opacity 0.4s linear, background-color 0.4s linear;
+}
+
+.ai-mode-button:hover::before {
+  opacity: 0;
+}
+
+/* Blur & Gradient Layers */
+.blur-layer,
+.gradient-layer {
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.blur-layer {
+  opacity: 0.35;
+  filter: blur(0.2em);
+}
+
+/* Rotating gradient */
+.rotating-gradient {
+  position: absolute;
+  inset: 0;
+  height: 200%;
+  top: -50%;
+  opacity: 0;
+
+  background: conic-gradient(
+    rgba(0,0,0,0) 0deg,
+    var(--gradient-green) 40deg,
+    var(--gradient-yellow) 160deg,
+    rgba(0,0,0,0) 360deg
+  );
+
+  transform: rotate(180deg);
+  scale: 2 1;
+  transition: opacity 0.4s linear;
+}
+
+.ai-mode-button:hover .rotating-gradient {
+  opacity: 1;
+  animation: rotate-gradient 2s linear infinite;
+}
+
+@keyframes rotate-gradient {
+  from { transform: rotate(180deg); }
+  to { transform: rotate(540deg); }
+}
+
+/* Inner background */
+.inner-bg {
+  position: absolute;
+  inset: 0.15em;
+  border-radius: inherit;
+  background: var(--btn-bg);
+  transition: filter 1s cubic-bezier(0,0,0,1);
+}
+
+.ai-mode-button:hover .inner-bg {
+  filter: blur(0.2em);
+}
+
+.inner-bg::after {
+  content: "";
+  position: absolute;
+  inset: -0.7em;
+  border-radius: inherit;
+  background: var(--btn-bg);
+  opacity: 0.5;
+}
+
+/* Button content */
+.button-content {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  gap: 0.3em;
+  align-items: center;
+}
+
+/* Icon */
+.icon {
+  width: 1.25em;
+  height: 1.25em;
+  display: flex;
+}
+
+.icon svg {
+  width: 100%;
+  height: 100%;
+  fill: currentColor;
+}
+
+/* Text label */
+.label {
+  font-size: 1em;
+  line-height: 1.25em;
+}

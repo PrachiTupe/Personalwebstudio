@@ -1,0 +1,61 @@
+.badges-section {
+  width: 100%;
+  padding: 60px 20px;
+  background: #000;
+  display: flex;
+  justify-content: center;
+}
+
+.badges-wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 900px;
+  gap: 40px;
+}
+
+.badge-card {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 12px;
+}
+
+.badge-icon {
+  width: 140px;
+  height: 140px;
+}
+
+.badge-title {
+  font-size: 0.9rem;
+  color: #fff;
+  opacity: 0.85;
+  max-width: 180px;
+  line-height: 1.3;
+}
+
+/* --- PHONE MODE --- */
+/* Full width + larger badges + perfect alignment */
+@media (max-width: 600px) {
+  .badges-wrapper {
+    width: 100%;
+    gap: 10px;
+  }
+
+  .badge-card {
+    width: 50%; /* each takes half the screen */
+  }
+
+  .badge-icon {
+    width: 150px;
+    height: 150px;
+  }
+
+  .badge-title {
+    font-size: 0.85rem;
+    max-width: 140px;
+  }
+}

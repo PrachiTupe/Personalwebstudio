@@ -1,0 +1,28 @@
+/* Import Be Vietnam Pro font */
+@import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;700&display=swap');
+
+.navbar {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 1rem;
+  background: rgba(0,0,0,0.9);
+  backdrop-filter: blur(10px);
+  font-family: 'Be Vietnam Pro', sans-serif;
+  /* Removed fixed positioning */
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  height: 20px; /* adjust as needed */
+  object-fit: contain;
+}
+
+.contact-wrapper {
+  transform: scale(0.92); /* scale button for navbar */
+}

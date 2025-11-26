@@ -1,0 +1,43 @@
+.below-hero-buttons {
+  width: 100%;
+  text-align: center;
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+}
+
+/* SAME size for both buttons */
+.btn {
+  width: 280px;                 /* Same width for all buttons */
+  padding: 14px 0;              /* Equal height */
+  font-size: 1.1rem;
+  font-weight: 600;
+  border-radius: 25px;          /* Modern rounded corners */
+  text-decoration: none;
+  display: flex;
+  justify-content: center;       /* Center icon + text */
+  align-items: center;
+  gap: 10px;
+  transition: 0.25s ease;
+}
+
+/* Icon */
+.btn-icon {
+  width: 22px;
+  height: 22px;
+}
+
+/* NEW COLOR: Lighter-than-black premium grey */
+.whatsapp-btn,
+.contact-btn {
+  background-color: #1f1f1f;     /* Modern soft black */
+  color: white;
+  border: 1px solid #333;        /* Gives clean outline */
+}
+
+.whatsapp-btn:hover,
+.contact-btn:hover {
+  background-color: #2a2a2a;     /* Slightly lighter on hover */
+}

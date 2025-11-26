@@ -1,0 +1,110 @@
+/* Footer Section */
+.footer-section {
+  background-color: #121212; /* dark background */
+  color: #fff;
+  padding: 40px 20px 20px;
+  font-family: 'Inter', sans-serif;
+}
+
+/* Container */
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center; /* center vertically */
+  gap: 40px;
+}
+
+/* Logo */
+.footer-logo img {
+  width: 230px; /* bigger logo */
+  height: auto;
+  object-fit: contain;
+  margin-bottom: 15px;
+}
+
+/* Horizontal Legal Links */
+.footer-legal-horizontal {
+  display: flex;
+  gap: 30px;
+  font-size: 0.75rem; /* small text */
+  color: #888; /* dark grey */
+  justify-content: center;
+  margin: 5px 0;
+}
+
+.footer-legal-horizontal a {
+  text-decoration: none;
+  color: #888;
+  transition: color 0.3s ease;
+}
+
+.footer-legal-horizontal a:hover {
+  color: #4da6ff; /* subtle blue accent on hover */
+}
+
+/* Social icons */
+.footer-social {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.footer-social h4 {
+  font-size: 0.8rem;
+  margin-bottom: 10px;
+  color: #bbb;
+}
+
+.footer-social .social-icons {
+  display: flex;
+  gap: 15px;
+  margin-top: 5px;
+}
+
+.footer-social img {
+  width: 28px;
+  height: 28px;
+  filter: brightness(0) invert(1);
+  transition: filter 0.3s ease;
+}
+
+.footer-social a:hover img {
+  filter: brightness(0) invert(0.7) sepia(1) hue-rotate(200deg) saturate(5);
+}
+
+/* Bottom copyright */
+.footer-bottom {
+  text-align: center;
+  font-size: 0.85rem;
+  color: #777;
+  margin-top: 30px;
+  border-top: 1px solid #222;
+  padding-top: 15px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .footer-container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 20px;
+  }
+
+  .footer-legal-horizontal {
+    justify-content: center;
+    gap: 20px; /* smaller gap on mobile */
+  }
+
+  .footer-social {
+    align-items: center;
+    margin-top: 10px;
+  }
+
+  .footer-logo img {
+    width: 200px;
+  }
+}

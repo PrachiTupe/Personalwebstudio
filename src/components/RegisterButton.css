@@ -1,0 +1,325 @@
+/* Overlay */
+.reg-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(10, 10, 10, 0.95);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  box-sizing: border-box;
+  z-index: 999999;
+  overflow-y: auto;
+}
+
+/* Modal */
+.reg-modal {
+  width: 100%;
+  max-width: 600px;
+  background: #1a1a1a;
+  padding: 30px;
+  border-radius: 16px;
+  position: relative;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+
+/* Close button */
+.close-btn {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: none;
+  border: none;
+  font-size: 22px;
+  color: white;
+  cursor: pointer;
+}
+
+/* Title & subtitle */
+.reg-title {
+  color: white;
+  font-size: 22px;
+  margin-bottom: 8px;
+  text-align: center;
+}
+
+.reg-sub {
+  color: #bbb;
+  font-size: 14px;
+  margin-bottom: 25px;
+  text-align: center;
+}
+
+/* Form */
+.reg-form {
+  width: 100%;
+}
+
+.form-control {
+  width: 100%;
+  margin-bottom: 18px;
+}
+
+.input {
+  width: 100%;
+  padding: 14px 16px;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid #555;
+  color: white;
+  font-size: 16px;
+  outline: none;
+  box-sizing: border-box;
+  display: block;
+}
+
+.input:focus {
+  border-bottom-color: #fff;
+}
+
+/* Submit button */
+.submit-btn {
+  width: 100%;
+  padding: 16px;
+  background: #333;
+  color: white;
+  border-radius: 8px;
+  border: none;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 5px;
+}
+
+.submit-btn:hover {
+  background: #555;
+}
+
+/* Or via section */
+.or-register {
+  margin: 20px 0 12px 0;
+  color: #bbb;
+  font-size: 14px;
+  text-align: center;
+}
+
+/* Buttons container */
+.option-buttons {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  align-items: center;
+}
+
+/* WhatsApp / Call buttons */
+.dark-whatsapp-btn,
+.dark-call-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  padding: 16px;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: 600;
+  color: white;
+  box-sizing: border-box;
+}
+
+.dark-whatsapp-btn {
+  background: #0f5132;
+}
+
+.dark-call-btn {
+  background: #212529;
+}
+
+.dark-whatsapp-btn:hover,
+.dark-call-btn:hover {
+  opacity: 0.85;
+}
+
+/* Button icons */
+.btn-icon {
+  width: 24px;
+  height: 24px;
+}
+
+/* Main page register button */
+.register-now-btn {
+  padding: 12px 28px;
+  background: #121212;
+  color: white;
+  border-radius: 8px;
+  font-weight: 600;
+  border: 1px solid #333;
+  cursor: pointer;
+}
+
+
+
+.register-btn {
+  position: relative;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+  padding-block: 0.75rem;
+  padding-inline: 1.5rem;
+  background-color: #0a5122; /* dark green background */
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  gap: 10px;
+  font-weight: bold;
+  border: 2px solid #046633; /* darker green border */
+  outline: none;
+  overflow: hidden;
+  font-size: 16px;
+  width: 45%; /* default width */
+  cursor: pointer;
+
+  /* center horizontally */
+  margin: 0 auto;
+  margin-top: 15px;
+}
+
+/* SVG icon inside button */
+.register-btn .icon {
+  width: 20px;
+  height: 20px;
+  transition: all 0.3s ease-in-out;
+}
+
+/* Hover scale effect */
+.register-btn:hover {
+  transform: scale(1.03);
+}
+
+.register-btn:hover .icon {
+  transform: translateX(10px);
+}
+
+/* Continuous shimmer effect */
+.register-btn::before {
+  content: "";
+  position: absolute;
+  width: 120px;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    rgba(255, 255, 255, 0) 30%,
+    rgba(255, 255, 255, 0.2) 50%,
+    rgba(255, 255, 255, 0) 70%
+  );
+  top: 0;
+  left: -120px;
+  animation: shine 2s linear infinite;
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+@keyframes shine {
+  0% {
+    left: -120px;
+  }
+  100% {
+    left: 100%;
+  }
+}
+
+/* Full width on mobile */
+@media (max-width: 480px) {
+  .register-btn {
+    width: 90%;
+  }
+}
+
+/* Wrapper to center tooltip horizontally */
+.tooltip-wrapper {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin-top: 15px; /* spacing from button */
+  margin-bottom: 120px;
+}
+
+.floating-tooltip {
+  position: relative;
+  background: #232323;
+  color: #fff;
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 400;
+  text-align: center;
+  display: inline-block;
+  animation: floatUpDown 2s ease-in-out infinite;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Small arrow pointing upwards */
+.tooltip-arrow {
+  position: absolute;
+  bottom: 100%; /* place above the tooltip div */
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 0;
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-bottom: 6px solid #212121;
+}
+
+/* Up-down floating animation */
+@keyframes floatUpDown {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+  100% { transform: translateY(0); }
+}
+
+
+.success-pill-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center; /* centers horizontally */
+  margin-top: 20px; /* distance from button */
+}
+
+.success-pill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: flex-start;
+  background-color: #232323; /* dark pill background */
+  color: #ffffff;
+  padding: 10px 20px;
+  border-radius: 15px; /* pill shape */
+  font-size: 14px;
+  font-weight: 500;
+  gap: 8px;
+  text-align: center;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+  animation: popIn 0.5s ease-out;
+  max-width: 90%;
+  text-align: left;
+}
+
+.pill-icon {
+  width: 30px;
+  height: 30px;
+  margin-right: 5px;
+}
+
+/* pop in animation */
+@keyframes popIn {
+  0% { transform: translateY(-10px); opacity: 0; }
+  100% { transform: translateY(0); opacity: 1; }
+}
+

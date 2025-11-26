@@ -1,0 +1,147 @@
+/* ========================= */
+/* Our Process Section Styles */
+/* ========================= */
+
+.our-process {
+  width: 100%;
+  padding: 80px 20px;
+  background: #000; /* black background */
+  text-align: center;
+  color: #fff;
+}
+
+.our-process-container {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.our-process-heading {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+
+.our-process-heading .highlight {
+  color: #FFD700; /* yellow for "Free 25-Minutes" */
+}
+
+.our-process-subtext {
+  font-size: 1.2rem;
+  color: #bbbbbb;
+  margin-bottom: 50px;
+}
+
+.our-process-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 30px;
+  justify-content: center;
+}
+
+.process-step {
+  background: #111; /* dark card */
+  border-radius: 20px;
+  padding: 30px 20px;
+  transition: all 0.4s ease;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+  transform: scale(0.96);
+  opacity: 0.8;
+  border: 2px solid #2c2c2c; /* dark grey border */
+}
+
+.process-step-active {
+  transform: scale(1.05);
+  opacity: 1;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.process-step-icon-box {
+  width: 10px;
+  height: 100px;
+  background: #000000; /* dark circle */
+  border-radius: 50%;
+  margin: 0 auto 15px auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.process-step-icon {
+  width: 50px;   /* increased size */
+  height: 50px;  /* increased size */
+  object-fit: contain;
+}
+
+.process-step-title {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: #fff;
+  margin-bottom: 8px;
+}
+
+.process-step-desc {
+  font-size: 0.9rem;
+  color: #8c8c8cff;
+  line-height: 1.5;
+}
+
+/* Hover effect */
+.process-step:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+  opacity: 1;
+}
+
+/* ========================= */
+/* Mobile Responsive Styles */
+/* ========================= */
+@media (max-width: 768px) {
+  .our-process-heading {
+    font-size: 1.8rem;
+  }
+
+  .our-process-subtext {
+    font-size: 0.95rem;
+  }
+
+  .our-process-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .process-step {
+    padding: 18px 20px;
+    display: flex;
+    align-items: center;
+    text-align: left;
+    gap: 16px;
+  }
+
+  .process-step-icon-box {
+    width: 60px;  /* increased size */
+    height: 60px; /* increased size */
+    flex-shrink: 0;
+    margin: 0;
+  }
+
+  .process-step-icon {
+    width: 36px;  /* increased size */
+    height: 36px; /* increased size */
+  }
+
+  .process-step-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .process-step-title {
+    font-size: 1rem;
+    margin-bottom: 4px;
+  }
+
+  .process-step-desc {
+    font-size: 0.85rem;
+    margin: 0;
+  }
+}

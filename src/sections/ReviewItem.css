@@ -1,0 +1,36 @@
+.review-card {
+  background: #000000ff;
+  border-radius: 20px;
+  padding: 20px;
+  border: 2px solid #2c2c2c;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* distribute content */
+  gap: 12px;
+  text-align: left;
+
+  height: 100%;        /* stretch inside grid / mobile */
+  box-sizing: border-box;
+}
+
+.review-stars {
+  display: flex;
+  gap: 3px;
+}
+
+.star-icon {
+  width: 22px;
+  height: 22px;
+}
+
+.review-comment {
+  color: #ffffffff;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.reviewer-name {
+  color: #888;
+  font-size: 0.85rem;
+  margin-top: auto; /* works with flex */
+}

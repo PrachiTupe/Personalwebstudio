@@ -1,0 +1,87 @@
+.stats-section {
+  width: 100%;
+  padding: 50px 20px;
+  background: #000000; /* solid black background */
+  color: #fff;
+  display: flex;
+  justify-content: center;
+}
+
+.stat-card h2 {
+  font-size: 2rem;
+  margin: 0;
+  /* gradient text */
+  background: linear-gradient(140deg, #6942FD, #CCAAFC);
+  font-weight: bold;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.stat-label p {
+  margin: 2px 0;
+  font-size: 0.9rem;
+  background: linear-gradient(160deg, #efeef2, #484848);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-align: center;
+}
+
+.stats-container {
+  display: flex;
+  gap: 50px;
+  flex-wrap: nowrap; /* keep horizontal */
+  justify-content: center;
+  overflow-x: auto;
+  padding-bottom: 10px;
+}
+
+.stat-card {
+  display: flex;
+  flex-direction: column; /* number above, words below */
+  align-items: center;
+  min-width: 80px;
+  flex-shrink: 0;
+}
+
+.stat-card h2 {
+  font-size: 2rem;
+  margin: 0;
+  color: #fff;
+}
+
+.stat-label p {
+  margin: 2px 0; /* small spacing between words */
+  font-size: 0.9rem;
+  color: #aaa;
+  text-align: center;
+}
+
+/* Hide scrollbar */
+.stats-container::-webkit-scrollbar {
+  display: none;
+}
+.stats-container {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Mobile scaling */
+@media (max-width: 400px) {
+  .stat-card h2 {
+    font-size: 1.6rem;
+  }
+
+  .stat-label p {
+    font-size: 0.8rem;
+  }
+
+  .stats-container {
+    gap: 20px;
+  }
+}
+
+.stats-section {
+  flex-direction: column; /* stack items vertically */
+  align-items: center;    /* center horizontally */
+  gap: 30px;              /* spacing between pill and stats */
+}

@@ -1,0 +1,71 @@
+.tools-scroll-section {
+  width: 100%;
+  padding: 0px 0;
+  background: #000000; /* dark background */
+  display: flex;
+  justify-content: center;
+}
+
+.tools-scroll-rectangle {
+  width: 90%; /* mobile width */
+  max-width: 1200px;
+  height: 80px;
+  overflow: hidden;
+  border-radius: 20px; /* rounded corners */
+  background: #121212; /* dark rectangle */
+  border: 1px solid #333;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  position: relative;
+  padding: 0 10px;
+}
+
+/* Gradient overlay for left/right fade */
+.tools-scroll-rectangle::before,
+.tools-scroll-rectangle::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  width: 60px; /* width of fade */
+  height: 100%;
+  pointer-events: none; /* icons are still clickable */
+  z-index: 2;
+}
+
+.tools-scroll-rectangle::before {
+  left: 0;
+  background: linear-gradient(to right, #1e1e1e 0%, rgba(30,30,30,0) 100%);
+}
+
+.tools-scroll-rectangle::after {
+  right: 0;
+  background: linear-gradient(to left, #1e1e1e 0%, rgba(30,30,30,0) 100%);
+}
+
+/* Desktop styling */
+@media (min-width: 768px) {
+  .tools-scroll-rectangle {
+    width: 70%;
+  }
+}
+
+.tools-scroll-row {
+  display: flex;
+  gap: 50px;
+  white-space: nowrap;
+  transition: transform 0.05s linear;
+}
+
+.tool-icon {
+  width: 40px;
+  height: auto;
+  flex-shrink: 0;
+  opacity: 0.9;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.tool-icon:hover {
+  transform: scale(1.15);
+  opacity: 1;
+}

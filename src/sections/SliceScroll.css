@@ -1,0 +1,52 @@
+.slice-scroll-section {
+  height: 300vh; /* 3 slides */
+  width: 100%;
+  background: #000;
+}
+
+.slice-sticky {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.slice-word {
+  position: absolute;
+  font-size: 4rem;
+  font-weight: 800;
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+  color: white;
+  text-align: center;
+  width: 80%;
+  line-height: 1.2;
+}
+
+.slice-word.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Optional: Gradient text inspired by your design */
+.slice-word.active:nth-child(1) {
+  background: linear-gradient(to right, #ffffff, #b6b6b6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.slice-word.active:nth-child(2) {
+  background: linear-gradient(to right, #a67eff, #6c4cff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.slice-word.active:nth-child(3) {
+  background: linear-gradient(to right, #f7d300, #ffae00);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}

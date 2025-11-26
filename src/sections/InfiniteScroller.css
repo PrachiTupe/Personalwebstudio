@@ -1,0 +1,81 @@
+body {
+  font-family: 'Montserrat', sans-serif;
+  background: #000;
+}
+
+.app {
+  width: 100%;
+  padding: 60px 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #000;
+  color: #fff;
+}
+
+.scroll-title {
+  font-size: 2.2rem;
+  font-weight: 700;
+  margin-bottom: 40px;
+  color: #fff;
+}
+
+.tag-list {
+  width: 40rem;
+  max-width: 92vw;
+  display: flex;
+  flex-direction: column;
+  gap: 1.3rem;
+  position: relative;
+  padding: 1.5rem 0;
+  overflow: hidden;
+}
+
+.loop-slider .inner {
+  display: flex;
+  width: fit-content;
+  animation-name: loop;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-direction: var(--direction);
+  animation-duration: var(--duration);
+}
+
+.tag {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: #111;
+  padding: 10px 42px 10px 20px; /* top | right | bottom | left */
+  border-radius: 25px;
+  margin-right: 1.2rem;
+  color: #e2e8f0;
+  font-size: 1rem;
+  border: 1px solid #222;
+  white-space: nowrap;
+  box-shadow: 0 0 12px rgba(255,255,255,0.03);
+}
+
+.tag-icon {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+}
+
+.fade {
+  pointer-events: none;
+  background: linear-gradient(
+    90deg,
+    #000 0%,
+    transparent 25%,
+    transparent 75%,
+    #000 100%
+  );
+  position: absolute;
+  inset: 0;
+}
+
+@keyframes loop {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}

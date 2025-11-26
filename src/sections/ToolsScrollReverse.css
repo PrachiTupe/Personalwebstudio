@@ -1,0 +1,71 @@
+.tools-scroll-reverse-section {
+  width: 100%;
+  padding: 20px 0;
+  background: #000000; /* dark background */
+  display: flex;
+  justify-content: center;
+}
+
+.tools-scroll-rectangle-reverse {
+  width: 90%; /* default for mobile */
+  max-width: 1200px;
+  height: 80px;
+  overflow: hidden;
+  border-radius: 20px; /* rounded corners */
+  background: #121212; /* dark rectangle */
+  border: 1px solid #333; /* subtle border */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5); /* soft shadow */
+  display: flex;
+  align-items: center;
+  position: relative;
+  padding: 0 10px;
+}
+
+/* Gradient overlay for left/right fade */
+.tools-scroll-rectangle-reverse::before,
+.tools-scroll-rectangle-reverse::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  width: 60px; /* width of fade */
+  height: 100%;
+  pointer-events: none; /* icons are still clickable */
+  z-index: 2;
+}
+
+.tools-scroll-rectangle-reverse::before {
+  left: 0;
+  background: linear-gradient(to right, #121212 0%, rgba(18,18,18,0) 100%);
+}
+
+.tools-scroll-rectangle-reverse::after {
+  right: 0;
+  background: linear-gradient(to left, #121212 0%, rgba(18,18,18,0) 100%);
+}
+
+/* Desktop styling */
+@media (min-width: 768px) {
+  .tools-scroll-rectangle-reverse {
+    width: 70%;
+  }
+}
+
+.tools-scroll-reverse-row {
+  display: flex;
+  gap: 50px;
+  white-space: nowrap;
+  transition: transform 0.05s linear;
+}
+
+.tool-icon-reverse {
+  width: 40px;
+  height: auto;
+  flex-shrink: 0;
+  opacity: 0.9;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.tool-icon-reverse:hover {
+  transform: scale(1.15);
+  opacity: 1;
+}
