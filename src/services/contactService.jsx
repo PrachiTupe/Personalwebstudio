@@ -1,6 +1,7 @@
 export const sendContactToSheet = async (payload) => {
   try {
-  const scriptURL = process.env.REACT_APP_GOOGLE_SCRIPT_URL;
+    const scriptURL = "https://script.google.com/macros/s/AKfycbz6GUlm-PEhNb2vlN2VsqD5CdKSrmRgCWYInDeAO3ckFdibQGW5ZDk97-qw0BQrNMr21w/exec"; // paste here
+
     const response = await fetch(scriptURL, {
       method: "POST",
       mode: "no-cors",
