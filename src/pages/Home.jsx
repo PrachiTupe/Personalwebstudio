@@ -27,16 +27,18 @@ export default function Home() {
       <Buttons />
       <Partners />
       <AvatarGroup />
+      <StatsSection />
       <FreeGuidance />
       <RegisterButton />
+      <OurProcessSection />
+
+    
 
       <ReviewsSection />
       <BadgesSection />
-      <OurProcessSection />
-      <StatsSection />
-      
-      <InfiniteScroller />
+     
       <ProjectsSection />
+      <InfiniteScroller />
 
       <ContactForm />
     

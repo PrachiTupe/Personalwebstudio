@@ -3,3 +3,11 @@
 @tailwind utilities;
 
 
+
+* {
+  font-family: "Be Vietnam Pro", sans-serif !important;
+}
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}

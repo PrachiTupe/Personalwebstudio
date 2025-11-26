@@ -1,12 +1,27 @@
 import React, { useState } from "react";
 import "./ContactForm.css";
-import timeIcon from "../icons/time.svg"; // adjust path
+import timeIcon from "../icons/time.svg";
+import { sendContactToSheet } from "../services/contactService";
 
 export default function ContactForm() {
   const [submitted, setSubmitted] = useState(false);
+  const [loading, setLoading] = useState(false);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
+    setLoading(true);
+
+    const formData = {
+      name: e.target[0].value,
+      email: e.target[1].value,
+      phone: e.target[2].value,
+      businessName: e.target[3].value,
+      message: e.target[4].value,
+    };
+
+    await sendContactToSheet(formData);
+
+    setLoading(false);
     setSubmitted(true);
   };
 
@@ -32,7 +47,7 @@ export default function ContactForm() {
 
   return (
     <section className="contact-form-section">
-      {/* Title and subtitle outside the card */}
+      {/* Title and subtitle */}
       <div className="contact-header">
         <h1>Contact Us</h1>
         <p>We’re here to help. Fill out the form below and our team will reach out.</p>
@@ -47,55 +62,32 @@ export default function ContactForm() {
 
         <form className="contact-form" onSubmit={handleSubmit}>
           <div className="form-control">
-            <input
-              className="input input-alt"
-              type="text"
-              placeholder="Name"
-              required
-            />
+            <input className="input input-alt" type="text" placeholder="Name" required />
             <span className="input-border input-border-alt"></span>
           </div>
 
           <div className="form-control">
-            <input
-              className="input input-alt"
-              type="email"
-              placeholder="Email"
-              required
-            />
+            <input className="input input-alt" type="email" placeholder="Email" required />
             <span className="input-border input-border-alt"></span>
           </div>
 
           <div className="form-control">
-            <input
-              className="input input-alt"
-              type="tel"
-              placeholder="Phone"
-              required
-            />
+            <input className="input input-alt" type="tel" placeholder="Phone" required />
             <span className="input-border input-border-alt"></span>
           </div>
 
           <div className="form-control">
-            <input
-              className="input input-alt"
-              type="text"
-              placeholder="Business Name (Optional)"
-            />
+            <input className="input input-alt" type="text" placeholder="Business Name (Optional)" />
             <span className="input-border input-border-alt"></span>
           </div>
 
           <div className="form-control">
-            <textarea
-              className="input input-alt message"
-              placeholder="Message"
-              required
-            ></textarea>
+            <textarea className="input input-alt message" placeholder="Message" required></textarea>
             <span className="input-border input-border-alt"></span>
           </div>
 
-          <button type="submit" className="submit-btn">
-            Send Message
+          <button type="submit" className="submit-btn" disabled={loading}>
+            {loading ? "Sending..." : "Send Message"}
           </button>
         </form>
       </div>

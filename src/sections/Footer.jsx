@@ -1,8 +1,8 @@
 import React from "react";
 import "./Footer.css";
 import logo from "../imgs/logo.png";
-import instagramIcon from "../imgs/whatsapp.svg";
-import linkedinIcon from "../imgs/whatsapp.svg";
+import instagramIcon from "../imgs/instagram.svg";
+import linkedinIcon from "../imgs/linkdin.svg";
 import whatsappIcon from "../imgs/whatsapp.svg";
 
 export default function Footer() {

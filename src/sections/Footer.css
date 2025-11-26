@@ -67,13 +67,9 @@
 .footer-social img {
   width: 28px;
   height: 28px;
-  filter: brightness(0) invert(1);
-  transition: filter 0.3s ease;
 }
 
-.footer-social a:hover img {
-  filter: brightness(0) invert(0.7) sepia(1) hue-rotate(200deg) saturate(5);
-}
+
 
 /* Bottom copyright */
 .footer-bottom {

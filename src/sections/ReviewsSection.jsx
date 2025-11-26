@@ -83,8 +83,8 @@ const ReviewsSection = () => {
 
   return (
     <section className="reviews-section">
-      <h2 className="section-heading">Traveler Reviews</h2>
-      <p className="section-subheadline">What our travelers are saying about us</p>
+      <h2 className="section-heading">Client Reviews</h2>
+      <p className="section-subheadline">What our clients are saying about us</p>
 
       {!isMobile ? (
         <div className="reviews-grid">
