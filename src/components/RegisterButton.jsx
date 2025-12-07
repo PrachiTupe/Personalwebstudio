@@ -2,33 +2,51 @@ import React, { useState } from "react";
 import "./RegisterButton.css";
 import whatsappIcon from "../imgs/whatsapp.svg";
 import callIcon from "../imgs/phone.svg";
-import blueTickIcon from "../icons/bluetick.svg"; 
+import blueTickIcon from "../icons/bluetick.svg";
+
+// IMPORT SERVICE
+import { sendRegistrationToSheet } from "../services/registerService";
 
 export default function RegisterButton() {
   const [isOpen, setIsOpen] = useState(false);
   const [showSuccessText, setShowSuccessText] = useState(false);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    setIsOpen(false); // close the modal
-    setShowSuccessText(true); // show success text
+
+    // collect form values
+    const fullName = e.target[0].value;
+    const email = e.target[1].value;
+    const phone = e.target[2].value;
+
+    const payload = { fullName, email, phone };
+
+    // send to Google Sheets
+    await sendRegistrationToSheet(payload);
+
+    // UI changes
+    setIsOpen(false);
+    setShowSuccessText(true);
+
+    // auto hide after 4 seconds
+    setTimeout(() => {
+      setShowSuccessText(false);
+    }, 4000);
   };
 
   return (
     <>
-      {/* Show success message above button */}
       {/* Success Pill Notification */}
-{showSuccessText && (
-  <div className="success-pill-wrapper">
-    <div className="success-pill">
-      <img src={blueTickIcon} alt="Success" className="pill-icon" />
-      You have successfully registered for the Free Guidance Session!
-    </div>
-  </div>
-)}
+      {showSuccessText && (
+        <div className="success-pill-wrapper">
+          <div className="success-pill">
+            <img src={blueTickIcon} alt="Success" className="pill-icon" />
+            You have successfully registered for the Free Guidance Session!
+          </div>
+        </div>
+      )}
 
-
-      {/* Main page button */}
+      {/* Main Register Button */}
       <button
         type="button"
         className="register-btn"
@@ -74,6 +92,7 @@ export default function RegisterButton() {
                   required
                 />
               </div>
+
               <div className="form-control">
                 <input
                   type="email"
@@ -82,6 +101,7 @@ export default function RegisterButton() {
                   required
                 />
               </div>
+
               <div className="form-control">
                 <input
                   type="tel"
@@ -108,6 +128,7 @@ export default function RegisterButton() {
                 <img src={whatsappIcon} alt="WhatsApp" className="btn-icon" />
                 WhatsApp
               </a>
+
               <a href="tel:+911234567890" className="dark-call-btn">
                 <img src={callIcon} alt="Call" className="btn-icon" />
                 Call

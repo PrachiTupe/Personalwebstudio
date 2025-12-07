@@ -5,19 +5,33 @@ import Navigation from "./sections/Navigation";
 import InfiniteSentence from "./sections/InfiniteSentence";
 import Home from "./pages/Home";
 import FakeNotification from "./sections/FakeNotification";
+import DMRegistrationForm from "./pages/DMRegistrationForm";
 
 export default function App() {
   return (
     <Router>
-      {/* Main wrapper with black background */}
       <div style={{ backgroundColor: "#000000", minHeight: "100vh", color: "#ffffff" }}>
-        <InfiniteSentence />
-        <Navigation />
-        <FakeNotification />
+        
         <Routes>
-          <Route path="/" element={<Home />} />
-          {/* Add more routes here */}
+
+          {/* ---------- HOME PAGE WITH ALL SECTIONS ---------- */}
+          <Route
+            path="/"
+            element={
+              <>
+                <InfiniteSentence />
+                <Navigation />
+                <FakeNotification />
+                <Home />
+              </>
+            }
+          />
+
+          {/* ---------- REGISTRATION PAGE WITHOUT EXTRAS ---------- */}
+          <Route path="/apply" element={<DMRegistrationForm />} />
+
         </Routes>
+
       </div>
     </Router>
   );

@@ -1,0 +1,187 @@
+/* BODY & WRAPPER */
+.form-wrapper {
+  background: #0b0b0b;
+  min-height: 100vh;
+  padding: 50px 20px;
+  display: flex;
+  justify-content: center;
+  font-family: "Inter", sans-serif;
+}
+
+/* FORM BOX */
+.form-box {
+  width: 95%;
+  max-width: 800px;
+  padding: 0; /* Removed outer card padding */
+}
+
+/* FORM TITLE */
+.form-header {
+  text-align: center;
+  margin-bottom: 40px;
+  color: #f0f0f0;
+}
+
+.form-header h1 {
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.form-header p {
+  font-size: 16px;
+  color: #bbb;
+}
+
+/* SECTION CARD */
+.section-card {
+  background: #1a1a1a;
+  border-radius: 14px;
+  padding: 30px;
+  margin-bottom: 30px;
+  border: 1px solid #333;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+}
+
+/* SECTION HEADER */
+.section-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 20px;
+  color: #cfcfcf;
+}
+
+.section-title {
+  font-size: 20px;
+  font-weight: 600;
+  color: #f0f0f0;
+}
+
+/* LABEL */
+.label {
+  display: block;
+  margin: 14px 0 6px;
+  font-size: 14px;
+  color: #bdbdbd;
+}
+
+/* INPUT & TEXTAREA */
+.input,
+.textarea {
+  width: 100%;
+  padding: 14px;
+  background: #222;
+  border: 1px solid #333;
+  border-radius: 10px;
+  font-size: 15px;
+  color: #f0f0f0;
+  outline: none;
+  transition: all 0.2s;
+}
+
+.input:focus,
+.textarea:focus {
+  border-color: #b985ff;
+  box-shadow: 0 0 8px rgba(185, 133, 255, 0.4);
+}
+
+.textarea {
+  height: 120px;
+  resize: vertical;
+}
+
+/* PILL SELECT */
+.pill-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin: 8px 0 12px;
+}
+
+.pill {
+  padding: 10px 20px;
+  border-radius: 30px;
+  background: #222;
+  border: 1px solid #333;
+  cursor: pointer;
+  transition: all 0.2s;
+  font-size: 14px;
+}
+
+.pill:hover {
+  border-color: #b985ff;
+  color: #b985ff;
+}
+
+.pill-selected {
+  background: #b985ff;
+  color: black;
+  border-color: #b985ff;
+}
+
+/* CHECKBOX PILL */
+.checkbox-pill {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 6px 0;
+  font-size: 14px;
+  color: #cfcfcf;
+  cursor: pointer;
+}
+
+.checkbox-pill input {
+  accent-color: #b985ff;
+}
+
+/* SUBMIT BUTTON */
+.submit-btn {
+  width: 100%;
+  padding: 16px;
+  margin-top: 10px;
+  background: #b985ff;
+  color: #000;
+  border-radius: 12px;
+  border: none;
+  cursor: pointer;
+  transition: 0.2s;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.submit-btn:hover {
+  background: #d3a8ff;
+}
+
+
+
+/* Use DM Sans throughout */
+body, .form-wrapper, .form-box {
+  font-family: 'DM Sans', sans-serif;
+}
+
+/* CHECKBOX PILL FIX */
+.checkbox-pill {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 6px 0;
+  font-size: 14px;
+  color: #cfcfcf;
+  cursor: pointer;
+  position: relative;
+}
+
+.checkbox-pill input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  margin: 0;
+  cursor: pointer;
+  accent-color: #b985ff; /* modern colored checkbox */
+}
+
+/* Optional: custom checkbox style */
+.checkbox-pill input[type="checkbox"]:checked {
+  accent-color: #b985ff;
+}
