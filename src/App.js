@@ -28,7 +28,7 @@ export default function App() {
           />
 
           {/* ---------- REGISTRATION PAGE WITHOUT EXTRAS ---------- */}
-          <Route path="/apply" element={<DMRegistrationForm />} />
+          <Route path="/digital-marketing-course-registration-form" element={<DMRegistrationForm />} />
 
         </Routes>
 
