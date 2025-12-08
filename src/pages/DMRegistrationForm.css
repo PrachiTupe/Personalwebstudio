@@ -1,6 +1,6 @@
 /* BODY & WRAPPER */
 .form-wrapper {
-  background: #0b0b0b;
+  background: rgb(0, 0, 0);
   min-height: 100vh;
   padding: 50px 20px;
   display: flex;
@@ -35,7 +35,7 @@
 
 /* SECTION CARD */
 .section-card {
-  background: #1a1a1a;
+  background: #141414;
   border-radius: 14px;
   padding: 30px;
   margin-bottom: 30px;
@@ -184,4 +184,121 @@ body, .form-wrapper, .form-box {
 /* Optional: custom checkbox style */
 .checkbox-pill input[type="checkbox"]:checked {
   accent-color: #b985ff;
+}
+/* SUCCESS MESSAGE CONTAINER */
+.dm-success-wrapper {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #0f0f10; /* deep dark */
+  padding: 16px;
+}
+
+/* CARD BOX */
+.dm-success-card {
+  background: rgb(23, 23, 23);
+  border-radius: 20px;
+  padding: 32px 24px;
+  width: 100%;
+  max-width: 420px;
+  text-align: center;
+  border: 1px solid rgb(56, 56, 56);
+  box-shadow: none; /* removed external shadow */
+}
+
+/* ICON */
+.dm-success-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto 16px auto; /* centers horizontally */
+  color: #83709a;
+  box-shadow: none !important; /* ensures shadow removed */
+}
+
+/* TITLE */
+.dm-success-title {
+  font-size: 1rem;
+  font-weight: 400;
+  color: #ffffff;
+  margin-bottom: 10px;
+}
+
+/* TEXT */
+.dm-success-text {
+  font-size: 1rem;
+  color: #717171;
+  line-height: 1.5;
+}
+
+/* RESPONSIVENESS */
+@media (max-width: 480px) {
+  .dm-success-card {
+    padding: 28px 20px;
+  }
+
+  .dm-success-title {
+    font-size: 1.5rem;
+  }
+
+  .dm-success-icon {
+    width: 60px;
+    height: 60px;
+  }
+}
+
+
+
+
+
+.dm-header-card {
+  width: 100%;
+  max-width: 700px; /* card width */
+  margin: 24px auto; /* center on page */
+  background-color: #000000; /* white card */
+
+  border-radius: 12px; /* rounded corners */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* subtle shadow */
+  overflow: hidden; /* ensures banner corners match card */
+  font-family: 'Inter', sans-serif;
+}
+
+.dm-banner {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.dm-header-text {
+  padding: 20px 24px;
+  text-align: left;
+}
+
+.dm-header-text h1 {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 10px;
+  color: #ffffff;
+}
+
+.dm-header-text p {
+  font-size: 1rem;
+  color: #6b6b6b;
+  line-height: 1.5;
+}
+
+.dm-header-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* center logo and card */
+  gap: 16px; /* space between logo and card */
+}
+
+.dm-logo {
+  max-width: 200px; /* horizontal logo width */
+  width: 100%;
+  height: auto;
+  margin-top: 16px;
 }
